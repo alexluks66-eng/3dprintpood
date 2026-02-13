@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+    <meta charset="UTF-8">
+    <title>3D Print Pood</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>3D Print Pood</h1>
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cart-count">0</span>
+    </div>
+</header>
+
+<section class="hero">
+    <h2>Kvaliteetsed 3D printitud tooted</h2>
+    <p>Disainitud ja toodetud Eestis</p>
+</section>
+
+<section class="products">
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1581091215367-59ab6b63d1c9" alt="">
+        <h3>Telefonialus</h3>
+        <p>12€</p>
+        <button onclick="addToCart('Telefonialus',12)">Lisa ostukorvi</button>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1581092334651-ddf26d9a09d0" alt="">
+        <h3>Autokinnitus</h3>
+        <p>18€</p>
+        <button onclick="addToCart('Autokinnitus',18)">Lisa ostukorvi</button>
+    </div>
+
+    <div class="product">
+        <img src="https://images.unsplash.com/photo-1581091870627-3b5de5f6d80e" alt="">
+        <h3>Kingihoidja</h3>
+        <p>9€</p>
+        <button onclick="addToCart('Kingihoidja',9)">Lisa ostukorvi</button>
+    </div>
+
+</section>
+
+<div id="cart" class="cart">
+    <h2>Ostukorv</h2>
+    <ul id="cart-items"></ul>
+    <p>Kokku: <span id="cart-total">0</span>€</p>
+    <button onclick="checkout()">Mine maksma</button>
+</div>
+
+<footer>
+    © 2026 3D Print Pood
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
