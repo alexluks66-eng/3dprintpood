@@ -30,6 +30,26 @@ function toggleCart() {
     cartDiv.classList.toggle("show");
 }
 
+function contactOrder() {
+    if (cart.length === 0) {
+        alert("Ostukorv on tühi!");
+        return;
+    }
+
+    let message = "Tere! Soovin tellida:\n\n";
+
+    cart.forEach(function(item) {
+        message += "- " + item.name + " (" + item.price + "€)\n";
+    });
+
+    message += "\nKokku: " + total.toFixed(2) + "€";
+    message += "\n\nPalun võtke minuga ühendust.";
+
+    alert(message);
+}
+
+
+
 function checkout() {
     if (cart.length === 0) {
         alert("Ostukorv on tühi!");
