@@ -8,203 +8,186 @@
 <style>
 body{
     margin:0;
-    font-family:Arial, sans-serif;
-    background:#000;
-    color:#fff;
+    font-family:Arial;
+    background:#0f0f0f;
+    color:white;
 }
+
 header{
-    background:linear-gradient(90deg,#000,#0d47a1);
-    padding:20px;
-    text-align:center;
+    background:black;
+    padding:15px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-nav a{
-    margin:0 15px;
+
+header h1{
     color:gold;
+}
+
+nav a{
+    color:white;
     text-decoration:none;
+    margin:0 15px;
     font-weight:bold;
 }
-nav a:hover{color:#fff;}
+
+nav a:hover{
+    color:gold;
+}
+
+.section{
+    display:none;
+    padding:40px;
+}
+
+.active{
+    display:block;
+}
 
 .products{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
-    padding:40px 20px;
 }
 
-.product{
-    background:#111;
-    border:1px solid gold;
-    border-radius:12px;
+.card{
+    background:#1a1a1a;
     padding:15px;
-    text-align:center;
-    transition:.3s;
-}
-.product:hover{
-    transform:scale(1.05);
-    box-shadow:0 0 15px gold;
-}
-.product img{
-    width:100%;
     border-radius:10px;
-    margin-bottom:10px;
+    text-align:center;
+    transition:0.3s;
 }
+
+.card:hover{
+    transform:scale(1.05);
+}
+
+.card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
 button{
     background:gold;
-    color:#000;
     border:none;
-    padding:8px 12px;
-    border-radius:6px;
-    font-weight:bold;
+    padding:10px;
+    margin-top:10px;
     cursor:pointer;
-}
-button:hover{
-    background:#0d47a1;
-    color:#fff;
-}
-
-.cart{
-    position:fixed;
-    top:15px;
-    right:15px;
-    background:gold;
-    color:#000;
-    padding:15px;
-    border-radius:10px;
-    width:230px;
     font-weight:bold;
 }
-.cart ul{
-    padding-left:18px;
-}
 
-footer{
-    background:#111;
-    text-align:center;
-    padding:20px;
-    margin-top:40px;
+button:hover{
+    background:white;
 }
 </style>
+
+<script>
+function showSection(id){
+    document.querySelectorAll('.section').forEach(sec=>{
+        sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+}
+
+function ost(){
+    alert("Tellimiseks saada mulle kiri või helista.\nMaksmine ainult sularahas!");
+}
+</script>
+
 </head>
 <body>
 
 <header>
 <h1>Luks 3D Print</h1>
 <nav>
-<a href="#">Avaleht</a>
-<a href="#tooted">Tooted</a>
-<a href="#kontakt">Kontakt</a>
+<a href="#" onclick="showSection('avaleht')">Avaleht</a>
+<a href="#" onclick="showSection('tooted')">Tooted</a>
+<a href="#" onclick="showSection('kontakt')">Kontaktid</a>
 </nav>
 </header>
 
-<div class="cart">
-🛒 Tooteid: <span id="cart-count">0</span><br>
-💰 Kokku: <span id="cart-total">0</span> € 
-<ul id="cart-items"></ul>
+<!-- AVALEHT -->
+<div id="avaleht" class="section active">
+<h2>Tere tulemast!</h2>
+<p>Minu 3D printimise tooted.</p>
+
+<div class="products">
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Roblox Kujuke</h3>
+<p>15€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<section id="tooted" class="products">
-
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Pliiatsi süda ots">
-<h3>Pliiatsi süda ots</h3>
-<p>Hind: 1€</p>
-<button onclick="addToCart('Pliiatsi süda ots',1)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Järjehoidja</h3>
+<p>5€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Liikuv madu">
-<h3>Liikuv madu</h3>
-<p>Hind: 1€</p>
-<button onclick="addToCart('Liikuv madu',1)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Nike Logo</h3>
+<p>10€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Roblox 3D print">
-<h3>Roblox 3D print</h3>
-<p>Hind: 2€</p>
-<button onclick="addToCart('Roblox 3D print',2)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Nime Silt</h3>
+<p>8€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
+</div>
+</div>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Raamatu järjehoidja">
-<h3>Raamatu järjehoidja</h3>
-<p>Hind: 0.50€</p>
-<button onclick="addToCart('Raamatu järjehoidja',0.5)">Lisa ostukorvi</button>
+<!-- TOOTED LEHT -->
+<div id="tooted" class="section">
+<h2>Minu tooted</h2>
+
+<div class="products">
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Roblox Kujuke</h3>
+<p>15€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Nike märk">
-<h3>Nike märk</h3>
-<p>Hind: 1€</p>
-<button onclick="addToCart('Nike märk',1)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Järjehoidja</h3>
+<p>5€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Süda">
-<h3>Süda</h3>
-<p>Hind: 1€</p>
-<button onclick="addToCart('Süda',1)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Nike Logo</h3>
+<p>10€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Dinosaurus liikuv">
-<h3>Dinosaurus liikuv</h3>
-<p>Hind: 2€</p>
-<button onclick="addToCart('Dinosaurus liikuv',2)">Lisa ostukorvi</button>
+<div class="card">
+<img src="https://via.placeholder.com/300">
+<h3>Nime Silt</h3>
+<p>8€</p>
+<button onclick="ost()">Lisa ostukorvi</button>
+</div>
+</div>
 </div>
 
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Be My Valentine">
-<h3>Be My Valentine</h3>
-<p>Hind: 2€</p>
-<button onclick="addToCart('Be My Valentine',2)">Lisa ostukorvi</button>
+<!-- KONTAKT -->
+<div id="kontakt" class="section">
+<h2>Kontaktid</h2>
+<p>Telefon: +372 51234567</p>
+<p>Email: sinugmail@gmail.com</p>
+<p>Maksmine: ainult sularahas</p>
 </div>
-
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Transformer märk">
-<h3>Transformer märk</h3>
-<p>Hind: 2€</p>
-<button onclick="addToCart('Transformer märk',2)">Lisa ostukorvi</button>
-</div>
-
-<div class="product">
-<img src="https://via.placeholder.com/250" alt="Rakett">
-<h3>Rakett</h3>
-<p>Hind: 2€</p>
-<button onclick="addToCart('Rakett',2)">Lisa ostukorvi</button>
-</div>
-
-</section>
-
-<section id="kontakt" style="padding:40px 20px;">
-<h2>Kontakt</h2>
-<p><strong>Telefon:</strong> <a href="tel:+37256207804" style="color:gold;">+372 5620 7804</a></p>
-<p><strong>Email:</strong> <a href="mailto:alexluks66@gmail.com" style="color:gold;">alexluks66@gmail.com</a></p>
-<p><strong>Makseviis:</strong> Ainult sularaha</p>
-<p><strong>Tarne:</strong> Raasiku ja Aruküla piires. Postiga saatmine võimalik (lisatasu).</p>
-</section>
-
-<footer>
-© 2026 Luks 3D Print - Kõik õigused kaitstud
-</footer>
-
-<script>
-let cartCount=0;
-let cartTotal=0;
-
-function addToCart(name,price){
-    cartCount++;
-    cartTotal+=price;
-
-    document.getElementById("cart-count").innerText=cartCount;
-    document.getElementById("cart-total").innerText=cartTotal.toFixed(2);
-
-    let li=document.createElement("li");
-    li.textContent=name+" - "+price+"€";
-    document.getElementById("cart-items").appendChild(li);
-}
-</script>
 
 </body>
 </html>
+
