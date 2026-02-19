@@ -4,22 +4,86 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luks 3D Print</title>
+
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#000;color:#fff}
-header{background:linear-gradient(90deg,#000,#0d47a1);padding:20px;text-align:center}
-nav a{margin:0 15px;color:gold;text-decoration:none;font-weight:bold}
-nav a:hover{color:#fff}
-section{padding:40px 20px}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.product{background:#111;border:1px solid gold;border-radius:12px;padding:15px;text-align:center;transition:.3s}
-.product:hover{transform:scale(1.05);box-shadow:0 0 15px gold}
-.product img{width:100%;border-radius:10px;margin-bottom:10px}
-button{background:gold;color:#000;border:none;padding:8px 12px;border-radius:6px;font-weight:bold;cursor:pointer}
-button:hover{background:#0d47a1;color:#fff}
-.cart{position:fixed;top:15px;right:15px;background:gold;color:#000;padding:15px;border-radius:10px;font-weight:bold;width:220px}
-.cart ul{padding-left:18px}
-footer{background:#111;text-align:center;padding:20px;margin-top:40px}
-a{color:gold}
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#000;
+    color:#fff;
+}
+header{
+    background:linear-gradient(90deg,#000,#0d47a1);
+    padding:20px;
+    text-align:center;
+}
+nav a{
+    margin:0 15px;
+    color:gold;
+    text-decoration:none;
+    font-weight:bold;
+}
+nav a:hover{color:#fff;}
+
+.products{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:40px 20px;
+}
+
+.product{
+    background:#111;
+    border:1px solid gold;
+    border-radius:12px;
+    padding:15px;
+    text-align:center;
+    transition:.3s;
+}
+.product:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 15px gold;
+}
+.product img{
+    width:100%;
+    border-radius:10px;
+    margin-bottom:10px;
+}
+button{
+    background:gold;
+    color:#000;
+    border:none;
+    padding:8px 12px;
+    border-radius:6px;
+    font-weight:bold;
+    cursor:pointer;
+}
+button:hover{
+    background:#0d47a1;
+    color:#fff;
+}
+
+.cart{
+    position:fixed;
+    top:15px;
+    right:15px;
+    background:gold;
+    color:#000;
+    padding:15px;
+    border-radius:10px;
+    width:230px;
+    font-weight:bold;
+}
+.cart ul{
+    padding-left:18px;
+}
+
+footer{
+    background:#111;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
 </style>
 </head>
 <body>
@@ -27,43 +91,50 @@ a{color:gold}
 <header>
 <h1>Luks 3D Print</h1>
 <nav>
-<a href="#home">Avaleht</a>
-<a href="#products">Tooted</a>
-<a href="#contact">Kontakt</a>
+<a href="#">Avaleht</a>
+<a href="#tooted">Tooted</a>
+<a href="#kontakt">Kontakt</a>
 </nav>
 </header>
 
 <div class="cart">
 🛒 Tooteid: <span id="cart-count">0</span><br>
-💰 Kokku: <span id="cart-total">0</span> €
+💰 Kokku: <span id="cart-total">0</span> € 
 <ul id="cart-items"></ul>
 </div>
 
-<section id="home">
-<h2>Kvaliteetsed 3D printitud tooted</h2>
-<p>Disainitud ja toodetud Eestis</p>
-</section>
-
-<section id="products">
-<h2>Tooted</h2>
-<div class="products">
+<section id="tooted" class="products">
 
 <div class="product">
-<img src="images/roblox.jpg" alt="Roblox 3D print">
+<img src="https://via.placeholder.com/250" alt="Pliiatsi süda ots">
+<h3>Pliiatsi süda ots</h3>
+<p>Hind: 1€</p>
+<button onclick="addToCart('Pliiatsi süda ots',1)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Liikuv madu">
+<h3>Liikuv madu</h3>
+<p>Hind: 1€</p>
+<button onclick="addToCart('Liikuv madu',1)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Roblox 3D print">
 <h3>Roblox 3D print</h3>
 <p>Hind: 2€</p>
 <button onclick="addToCart('Roblox 3D print',2)">Lisa ostukorvi</button>
 </div>
 
 <div class="product">
-<img src="images/jarjehoidja.jpg" alt="Raamatu järjehoidja">
+<img src="https://via.placeholder.com/250" alt="Raamatu järjehoidja">
 <h3>Raamatu järjehoidja</h3>
 <p>Hind: 0.50€</p>
 <button onclick="addToCart('Raamatu järjehoidja',0.5)">Lisa ostukorvi</button>
 </div>
 
 <div class="product">
-<img src="images/nike.jpg" alt="Nike märk">
+<img src="https://via.placeholder.com/250" alt="Nike märk">
 <h3>Nike märk</h3>
 <p>Hind: 1€</p>
 <button onclick="addToCart('Nike märk',1)">Lisa ostukorvi</button>
@@ -83,13 +154,33 @@ a{color:gold}
 <button onclick="addToCart('Dinosaurus liikuv',2)">Lisa ostukorvi</button>
 </div>
 
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Be My Valentine">
+<h3>Be My Valentine</h3>
+<p>Hind: 2€</p>
+<button onclick="addToCart('Be My Valentine',2)">Lisa ostukorvi</button>
 </div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Transformer märk">
+<h3>Transformer märk</h3>
+<p>Hind: 2€</p>
+<button onclick="addToCart('Transformer märk',2)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Rakett">
+<h3>Rakett</h3>
+<p>Hind: 2€</p>
+<button onclick="addToCart('Rakett',2)">Lisa ostukorvi</button>
+</div>
+
 </section>
 
-<section id="contact">
+<section id="kontakt" style="padding:40px 20px;">
 <h2>Kontakt</h2>
-<p><strong>Telefon:</strong> <a href="tel:+37256207804">+372 5620 7804</a></p>
-<p><strong>Email:</strong> <a href="mailto:alexluks66@gmail.com">alexluks66@gmail.com</a></p>
+<p><strong>Telefon:</strong> <a href="tel:+37256207804" style="color:gold;">+372 5620 7804</a></p>
+<p><strong>Email:</strong> <a href="mailto:alexluks66@gmail.com" style="color:gold;">alexluks66@gmail.com</a></p>
 <p><strong>Makseviis:</strong> Ainult sularaha</p>
 <p><strong>Tarne:</strong> Raasiku ja Aruküla piires. Postiga saatmine võimalik (lisatasu).</p>
 </section>
@@ -103,14 +194,15 @@ let cartCount=0;
 let cartTotal=0;
 
 function addToCart(name,price){
-cartCount++;
-cartTotal+=price;
-document.getElementById('cart-count').innerText=cartCount;
-document.getElementById('cart-total').innerText=cartTotal.toFixed(2);
+    cartCount++;
+    cartTotal+=price;
 
-let li=document.createElement('li');
-li.textContent=name+' - '+price+'€';
-document.getElementById('cart-items').appendChild(li);
+    document.getElementById("cart-count").innerText=cartCount;
+    document.getElementById("cart-total").innerText=cartTotal.toFixed(2);
+
+    let li=document.createElement("li");
+    li.textContent=name+" - "+price+"€";
+    document.getElementById("cart-items").appendChild(li);
 }
 </script>
 
