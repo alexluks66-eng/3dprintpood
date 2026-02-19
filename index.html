@@ -1,305 +1,118 @@
-DOCTYPE html>
+<!DOCTYPE html>
 <html lang="et">
 <head>
-    <meta charset="UTF-8">
-    <title>3D Print Pood</title>
-    <link rel="stylesheet" href="style.css">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Luks 3D Print</title>
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #000;
-    color: white;
-}
-header {
-    background: linear-gradient(90deg, black, #0d47a1);
-    padding: 20px;
-    text-align: center;
-}
-nav a {
-    margin: 0 15px;
-    color: gold;
-    text-decoration: none;
-    font-weight: bold;
-}
-nav a:hover {
-    color: white;
-}
-section {
-    padding: 40px 20px;
-}
-.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-.card {
-    background-color: #111;
-    border: 1px solid gold;
-    border-radius: 15px;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px gold;
-}
-.card img {
-    width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-button {
-    background-color: gold;
-    color: black;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-}
-button:hover {
-    background-color: #0d47a1;
-    color: white;
-}
-footer {
-    background-color: #111;
-    text-align: center;
-    padding: 20px;
-    margin-top: 30px;
-}
-.cart {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: gold;
-    color: black;
-    padding: 15px;
-    border-radius: 10px;
-    font-weight: bold;
-}
+body{margin:0;font-family:Arial,sans-serif;background:#000;color:#fff}
+header{background:linear-gradient(90deg,#000,#0d47a1);padding:20px;text-align:center}
+nav a{margin:0 15px;color:gold;text-decoration:none;font-weight:bold}
+nav a:hover{color:#fff}
+section{padding:40px 20px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.product{background:#111;border:1px solid gold;border-radius:12px;padding:15px;text-align:center;transition:.3s}
+.product:hover{transform:scale(1.05);box-shadow:0 0 15px gold}
+.product img{width:100%;border-radius:10px;margin-bottom:10px}
+button{background:gold;color:#000;border:none;padding:8px 12px;border-radius:6px;font-weight:bold;cursor:pointer}
+button:hover{background:#0d47a1;color:#fff}
+.cart{position:fixed;top:15px;right:15px;background:gold;color:#000;padding:15px;border-radius:10px;font-weight:bold;width:220px}
+.cart ul{padding-left:18px}
+footer{background:#111;text-align:center;padding:20px;margin-top:40px}
+a{color:gold}
 </style>
 </head>
 <body>
 
 <header>
-    <h1>3D Print Pood</h1>
-    <div class="cart-icon" onclick="toggleCart()">
-        🛒 <span id="cart-count">0</span>
-    </div>
-    <h1>Luks 3D Print</h1>
-    <nav>
-        <a href="#home">Avaleht</a>
-        <a href="#products">Tooted</a>
-        <a href="#services">Teenused</a>
-        <a href="#contact">Kontaktid</a>
-    </nav>
+<h1>Luks 3D Print</h1>
+<nav>
+<a href="#home">Avaleht</a>
+<a href="#products">Tooted</a>
+<a href="#contact">Kontakt</a>
+</nav>
 </header>
 
-<section class="hero">
-    <h2>Kvaliteetsed 3D printitud tooted</h2>
-    <p>Disainitud ja toodetud Eestis</p>
-
-<div class="product">
-    <img src="https://scontent.ftll3-2.fna.fbcdn.net/v/t39.30808-6/633645956_122121902229071090_1247736074659299827_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=5aYb2gAzADkQ7kNvwGwA1kk&_nc_oc=AdkbopXi9DSWisr94I_pOi3e6nfGAivX5BFuZvhaZMT0E-3fYrfbRZiXyiZpuIh2PYFEiJkH958HwWDnPmxmWCCo&_nc_zt=23&_nc_ht=scontent.ftll3-2.fna&_nc_gid=geda8QzaIIknPJgUHKR_Gg&oh=00_AfsjUu1fR3z4hSmuIRft7xtJYSgFHZlPMjoghxWx6_ec-g&oe=699547C5" alt="Pliiatsi süda ots">
-    <h3>Pliiatsi süda ots</h3>
-    <p>Hind: 1€</p>
-    <button onclick="addToCart('Pliiatsi süda ots', 1)">Lisa ostukorvi</button>
-</div>
-
-   
- <div class="product">
-    <img src="https://scontent.ftll3-1.fna.fbcdn.net/v/t39.30808-6/634817722_122121902085071090_187471435899058082_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=vir-K7sh2ZQQ7kNvwGtlsV-&_nc_oc=Adl9PdPtMclESDbHu46fPgdDkmk2RDVj4fEpmi5vew2uNJQbNLQwA-8GsjHhqWGl0kGoB_W2RqP4WtlIcn-WPPvp&_nc_zt=23&_nc_ht=scontent.ftll3-1.fna&_nc_gid=0zK0rY7YtZNwyzCCI9wiCg&oh=00_AfuPVe-Hf8TPyEgD9GgmwUMIf7iTaI_h9nBxwoKOuqq1ag&oe=69951A6B" alt="Liikuv madu">
-    <h3>Liikuv madu</h3>
-    <p>Hind: 1€</p>
-    <button onclick="addToCart('Liikuv madu', 1)">Lisa ostukorvi</button>
-</div>
-       
-        
-
-    
-<div class="product">
-    <img src="images/roblox.jpg" alt="Roblox 3D print">
-    <h3>Roblox 3D print</h3>
-    <p>Hind: 2€</p>
-    <button onclick="addToCart('Roblox 3D print', 2)">Lisa ostukorvi</button>
-</div>
-
-
-    
-
-    <div class="product">
-    <img src="images/jarjehoidja.jpg" alt="Raamatu järjehoidja">
-    <h3>Raamatu järjehoidja</h3>
-    <p>Hind: 0.50€</p>
-    <button onclick="addToCart('Raamatu järjehoidja', 0.5)">Lisa ostukorvi</button>
-</div>
-
-
-
- <div class="product">
-    <img src="images/nike.jpg" alt="Nike märk">
-    <h3>Nike märk</h3>
-    <p>Hind: 1€</p>
-    <button onclick="addToCart('Nike märk', 1)">Lisa ostukorvi</button>
-</div>
-   
- 
-        
-<div class="product">
-    <img src="https://scontent.ftll3-2.fna.fbcdn.net/v/t39.30808-6/634267866_122121901839071090_4558324295385696311_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=BRHQzf20HxkQ7kNvwFzOp5C&_nc_oc=Adk-6yQ54UurDKPu1wTvJXWfZGtxNyBEU1vfuKPXztsGMG78qrViFQXKtCAtdyvIa1Wg3wYSQIib4MSoqYz_C_Wg&_nc_zt=23&_nc_ht=scontent.ftll3-2.fna&_nc_gid=VVxom9d9zL2PtNS3BrEy-g&oh=00_AfvXX3tRWgaIILXEnoXygsp1mF26rFGUZxIKCs5-gG8tTQ&oe=69952841" alt="Süda">
-    <h3>Süda</h3>
-    <p>Hind: 1€</p>
-    <button onclick="addToCart('Süda', 1)">Lisa ostukorvi</button>
 <div class="cart">
-    🛒 Tooteid: <span id="cart-count">0</span><br>
-    💰 Kokku: <span id="cart-total">0</span> €
+🛒 Tooteid: <span id="cart-count">0</span><br>
+💰 Kokku: <span id="cart-total">0</span> €
+<ul id="cart-items"></ul>
 </div>
 
-<div class="product">
-    <img src="https://scontent.ftll3-2.fna.fbcdn.net/v/t39.30808-6/633695208_122121901515071090_3613850399332714776_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=id64qn4mn_IQ7kNvwH8SClF&_nc_oc=AdnrfyMcYYErNjgkgtjCAeB1d0YSAzJF3w9PJsnfR4PxBjFhcLbEv-XBazdALxz-MZz2tafbatBCopWNOOBNAF-f&_nc_zt=23&_nc_ht=scontent.ftll3-2.fna&_nc_gid=1cyNz0m0-FHJLB92p4M5PQ&oh=00_AfulaaZKiK_9BAn84n_LjAh1hTZl4X8jldzmPlfdX4F4WQ&oe=69952609" alt="Süda">
-    <h3>Süda</h3>
-    <p>Hind: 1€</p>
-    <button onclick="addToCart('Süda', 1)">Lisa ostukorvi</button>
-</div>
-
-
-<div class="product">
-    <img src="https://scontent.ftll3-1.fna.fbcdn.net/v/t39.30808-6/633844230_122121901299071090_6475496063707191295_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=GuO3peXXEWoQ7kNvwGI_vLA&_nc_oc=Adk2JkQCHsFrXVIntOYiMdIyyu8O6fJLiiCZSFtxQcRyK1ndPxZKLY-UbvaaGzrdQW8Biyos95hLepkDTXxDJ8Wj&_nc_zt=23&_nc_ht=scontent.ftll3-1.fna&_nc_gid=c_v4DttwjLtOaj4Qgl-dNw&oh=00_AfviUZnyrDz1M3bA-cyEPOVJ0Gzt85z5KN_-TxNz43okRQ&oe=6995227A" alt="Dinosaurus liikuv">
-    <h3>Dinosaurus liikuv</h3>
-    <p>Hind: 2€</p>
-    <button onclick="addToCart('Dinosaurus liikuv', 2)">Lisa ostukorvi</button>
-</div>
-
-<div class="product">
-    <img src="https://scontent.ftll3-2.fna.fbcdn.net/v/t39.30808-6/633792314_122121901107071090_7848357987009264157_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=R0gnIulImuwQ7kNvwH-aQJe&_nc_oc=Adl4FcPELiiitBkaLj58O6M_r9blzgqf6saUchv1Srvl9wdFqWcoOs4dojEelrb1hxx07RvE3S8Vpk16eZEbXfXa&_nc_zt=23&_nc_ht=scontent.ftll3-2.fna&_nc_gid=39JZDUb_UTcZTPgu0lsfkg&oh=00_AftdIucMgJwVRq8ExVl5O4hN7acFtBxwZLWYZJGTdVawzg&oe=69953747" alt="Be My Valentine">
-    <h3>Be My Valentine</h3>
-    <p>Hind: 2€</p>
-    <button onclick="addToCart('Be My Valentine', 2)">Lisa ostukorvi</button>
-</div>
-
-<div class="product">
-    <img src="https://scontent.ftll3-2.fna.fbcdn.net/v/t39.30808-6/633932414_122121902751071090_8609297226963088004_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=PWUJp1bK-sYQ7kNvwGow-VQ&_nc_oc=AdnY38PA6IFUw0WhKfz7NwT7M-xKFD2WYQmYXD-SuaoPXK4jNPA3jeU5ek7jndZpO6lGoaP35AVah48gpYsk3g_i&_nc_zt=23&_nc_ht=scontent.ftll3-2.fna&_nc_gid=fgw0Sf29slFxZtwRybgg0g&oh=00_AfsFxr86d8m-Swmq-_8deOENOukMIlx2dGG_scc8a_4nYg&oe=69954462" alt="Transformer märk">
-    <h3>Transformer märk</h3>
-    <p>Hind: 2€</p>
-    <button onclick="addToCart('Transformer märk', 2)">Lisa ostukorvi</button>
-</div>
-
-
-
-    <div class="product">
-    <img src="https://scontent.ftll3-1.fna.fbcdn.net/v/t39.30808-6/634224149_122121903051071090_8297245534960101535_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lcoVr-1beYQQ7kNvwE5FQtz&_nc_oc=AdmHDE7P5-q5Df51qf6FX8Yj6afinpLBxw77OVmQk2iRup1d7IQ6chWExA8_K1FypM4UcmOgQIvlSPqLNbutI_so&_nc_zt=23&_nc_ht=scontent.ftll3-1.fna&_nc_gid=DtQd8A8TFbv0f-BUMOMXsQ&oh=00_AfspkPn6Ho3ZS1hCfZxcxf2gJUcr885r-jdmgVWQwWe_vw&oe=69953587" alt="Rakett">
-    <h3>Rakett</h3>
-    <p>Hind: 2€</p>
-    <button onclick="addToCart('Rakett', 2)">Lisa ostukorvi</button>
-</div>
-
-    
-<div id="cart" class="cart">
-    <h2>Ostukorv</h2>
-    <ul id="cart-items"></ul>
-    <p>Kokku: <span id="cart-total">0</span>€</p>
-    <button onclick="contactOrder()">Telli (võta ühendust)</button>
-
-    
-<p><strong>Makseviis:</strong> Ainult sularaha</p>
-<p><strong>Tarne:</strong> Raasiku ja Aruküla piires. Postiga saatmine võimalik (lisatasu).</p>
-<p><strong>Tellimiseks:</strong></p>
-<p>📞 5620 7804</p>
-<p>📧 alexluks66@gmail.com</p>
 <section id="home">
-    <h2>Tere tulemast Luks 3D Print e-poodi</h2>
-    <p>Pakume kvaliteetseid 3D printimise lahendusi mustas, sinises, kuldses ja valges toonis.</p>
+<h2>Kvaliteetsed 3D printitud tooted</h2>
+<p>Disainitud ja toodetud Eestis</p>
 </section>
 
 <section id="products">
-    <h2>Tooted</h2>
-    <div class="products">
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="3D Kujuke">
-            <h3>3D Kujuke</h3>
-            <p>Hind: 15€</p>
-            <button onclick="addToCart(15)">Lisa ostukorvi</button>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="Telefoni hoidik">
-            <h3>Telefoni hoidik</h3>
-            <p>Hind: 10€</p>
-            <button onclick="addToCart(10)">Lisa ostukorvi</button>
-        </div>
-        <div class="card">
-            <img src="https://via.placeholder.com/250" alt="Isikupärastatud nimi">
-            <h3>Isikupärastatud nimi</h3>
-            <p>Hind: 20€</p>
-            <button onclick="addToCart(20)">Lisa ostukorvi</button>
-        </div>
-    </div>
-</section>
+<h2>Tooted</h2>
+<div class="products">
 
-<a href="mailto:alexluks66@gmail.com?subject=3D Print Pood Tellimus">
-    Saada tellimus emailiga
-</a>
-<section id="services">
-    <h2>Teenused</h2>
-    <p>Pakume eritellimusel 3D printimist vastavalt kliendi soovidele.</p>
-</section>
-
-   <a href="tel:+37256207804">Helista tellimiseks</a>
- 
-    
+<div class="product">
+<img src="images/roblox.jpg" alt="Roblox 3D print">
+<h3>Roblox 3D print</h3>
+<p>Hind: 2€</p>
+<button onclick="addToCart('Roblox 3D print',2)">Lisa ostukorvi</button>
 </div>
+
+<div class="product">
+<img src="images/jarjehoidja.jpg" alt="Raamatu järjehoidja">
+<h3>Raamatu järjehoidja</h3>
+<p>Hind: 0.50€</p>
+<button onclick="addToCart('Raamatu järjehoidja',0.5)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="images/nike.jpg" alt="Nike märk">
+<h3>Nike märk</h3>
+<p>Hind: 1€</p>
+<button onclick="addToCart('Nike märk',1)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Süda">
+<h3>Süda</h3>
+<p>Hind: 1€</p>
+<button onclick="addToCart('Süda',1)">Lisa ostukorvi</button>
+</div>
+
+<div class="product">
+<img src="https://via.placeholder.com/250" alt="Dinosaurus liikuv">
+<h3>Dinosaurus liikuv</h3>
+<p>Hind: 2€</p>
+<button onclick="addToCart('Dinosaurus liikuv',2)">Lisa ostukorvi</button>
+</div>
+
+</div>
+</section>
+
 <section id="contact">
-    <h2>Kontaktid</h2>
-    <p>Email: info@luks3dprint.ee</p>
-    <p>Telefon: +372 5555 5555</p>
+<h2>Kontakt</h2>
+<p><strong>Telefon:</strong> <a href="tel:+37256207804">+372 5620 7804</a></p>
+<p><strong>Email:</strong> <a href="mailto:alexluks66@gmail.com">alexluks66@gmail.com</a></p>
+<p><strong>Makseviis:</strong> Ainult sularaha</p>
+<p><strong>Tarne:</strong> Raasiku ja Aruküla piires. Postiga saatmine võimalik (lisatasu).</p>
 </section>
 
 <footer>
-    © 2026 3D Print Pood
-    <p>© 2026 Luks 3D Print - Kõik õigused kaitstud</p>
+© 2026 Luks 3D Print - Kõik õigused kaitstud
 </footer>
 
-<script src="script.js"></script>
-</body>
-</html>
-
-
-
-
-
-
 <script>
-let cartCount = 0;
-let cartTotal = 0;
+let cartCount=0;
+let cartTotal=0;
 
-function addToCart(price) {
-    cartCount++;
-    cartTotal += price;
-    document.getElementById("cart-count").innerText = cartCount;
-    document.getElementById("cart-total").innerText = cartTotal;
+function addToCart(name,price){
+cartCount++;
+cartTotal+=price;
+document.getElementById('cart-count').innerText=cartCount;
+document.getElementById('cart-total').innerText=cartTotal.toFixed(2);
+
+let li=document.createElement('li');
+li.textContent=name+' - '+price+'€';
+document.getElementById('cart-items').appendChild(li);
 }
 </script>
-
-
-
-
-
-
-
-
-
-<section id="contact">
-    <h2>Kontakt</h2>
-    <div class="contact-info">
-        <p><strong>Telefon:</strong> <a href="tel:+37256207804">+372 5620 7804</a></p>
-        <p><strong>Email:</strong> <a href="mailto:alexluks66@gmail.com">alexluks66@gmail.com</a></p>
-        <p><strong>Aadress:</strong> Raasiku, Eesti</p>
-    </div>
-</section>
 
 </body>
 </html>
